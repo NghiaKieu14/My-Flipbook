@@ -1,58 +1,54 @@
-!DOCTYPE html
-html
-head
-  meta charset=UTF-8
-  titleQuyển sổ A5title
-  script src=httpscode.jquery.comjquery-3.6.0.min.jsscript
-  script src=httpswww.turnjs.comlibturn.min.jsscript
-  style
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Quyển sổ A5</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://www.turnjs.com/lib/turn.min.js"></script>
+  <style>
     body {
-      background #eaeaea;
-      display flex;
-      justify-content center;
-      padding 30px;
-      font-family sans-serif;
+      background: #eaeaea;
+      display: flex;
+      justify-content: center;
+      padding: 30px;
+      font-family: sans-serif;
     }
     #flipbook {
-      width 840px;  2 trang A5 
-      height 595px;
+      width: 840px; /* 2 trang A5 */
+      height: 595px;
     }
     .page {
-      width 420px;
-      height 595px;
-      background-color white;
-      border 1px solid #aaa;
-      box-sizing border-box;
-      padding 30px;
-      font-size 16px;
+      width: 420px;
+      height: 595px;
+      background-color: white;
+      border: 1px solid #aaa;
+      box-sizing: border-box;
+      padding: 30px;
+      font-size: 16px;
     }
-  style
-head
-body
+  </style>
+</head>
+<body>
 
-div id=flipbook
-  div class=pagestrongMục lụcstrongbrbr1. Lời mở đầubr2. Chương 1br3. Chương 2br...div
-  div class=pagestrongLời mở đầustrongbrbrChào mừng bạn đến với quyển sổ A5 của tôi...div
+<div id="flipbook">
+  <div class="page"><strong>Mục lục</strong><br><br>1. Lời mở đầu<br>2. Chương 1<br>3. Chương 2<br>...</div>
+  <div class="page"><strong>Lời mở đầu</strong><br><br>Chào mừng bạn đến với quyển sổ A5 của tôi...</div>
+</div>
 
-  !-- Tạo 154 trang nội dung --
-  !-- Bạn có thể thay nội dung của từng trang tùy ý --
-  !-- Sử dụng JavaScript để sinh tự động --
-
-div
-
-script
-   Thêm 154 trang nội dung bằng JavaScript
-  for (let i = 1; i = 154; i++) {
-    $('#flipbook').append(`div class=pageTrang ${i}div`);
+<script>
+  // Thêm 154 trang nội dung bằng JavaScript
+  for (let i = 1; i <= 154; i++) {
+    $('#flipbook').append(`<div class="page">Trang ${i}</div>`);
   }
 
-   Kích hoạt lật trang
-  $(#flipbook).turn({
-    width 840,
-    height 595,
-    autoCenter true
+  // Kích hoạt lật trang
+  $("#flipbook").turn({
+    width: 840,
+    height: 595,
+    autoCenter: true
   });
-script
+</script>
 
-body
-html
+</body>
+</html>
